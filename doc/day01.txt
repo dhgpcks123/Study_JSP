@@ -1,0 +1,85 @@
+tomcat 설정
+	1. 톰캣의 환경변수를 만들고
+		환경변수를 Path에 등록한다.
+	2. 톰캣 압출을 풀어놓은 폴더로 이동해서 conf 폴더를 찾는다.
+	3. server.xml 파일을 열어서
+		
+		<Connector port="8080" 
+    		   protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+		==>
+		<Connector port="80" 
+    		   protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               URIEncoding="UTF-8" />
+               
+        	로 수정한다.
+        	
+	4. web.xml 파일을 열어서
+
+1. 
+<!--
+	<filter>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <async-supported>true</async-supported>
+    </filter>
+-->
+
+==>
+
+	<filter>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+<!--
+        <async-supported>true</async-supported>
+-->
+    </filter>
+    
+2.  
+<!--
+    <filter-mapping>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+-->
+
+==>
+    
+<!--
+-->
+    <filter-mapping>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+3. 
+만약 welcome 파일로 등록하고 싶은 파일이 있으면
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>등록할파일</welcome-file>
+    </welcome-file-list>
+    
+    
+ 4. context.xml 파일을 열어서
+ 	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+ 	태그 아래에
+ 	<WatchedResource>META-INF/context.xml</WatchedResource>
+ 	태그를 추가해준다.
+ 	
+ 5. tomcat-users.xml 파일을 열어서
+ 
+    
+ 
