@@ -4,7 +4,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet({"/css/*", "/js/*", "/img/*"})
+//@WebServlet({"/css/*", "/js/*", "/img/*"})
 public class Resrc extends HttpServlet {
 	
 	/*

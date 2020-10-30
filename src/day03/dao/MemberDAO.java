@@ -4,9 +4,11 @@ import java.sql.*;
 
 import day03.db.*;
 import day03.sql.*;
+import db.*;
 
 public class MemberDAO {
-	ClsJDBC db;
+//	ClsJDBC db;
+	ClsDBCP db;
 	Connection con;
 	Statement stmt;
 	PreparedStatement pstmt;
@@ -14,7 +16,8 @@ public class MemberDAO {
 	MemberSQL mSQL;
 	
 	public MemberDAO() {
-		db = new ClsJDBC();
+//		db = new ClsJDBC();
+		db = new ClsDBCP();
 		mSQL = new MemberSQL();
 		
 		
