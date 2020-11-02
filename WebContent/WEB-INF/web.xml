@@ -10,19 +10,35 @@
 		설정을 지정하는 파일이다.
 -->
 
-	<!-- css, js, img 서블릿 매핑 -->
-	<!-- 서블릿 정의 -->
+	<!-- ****************서블릿 정의 **************** -->
+	<!-- css, js, img 서블릿 정의-->
 	<servlet>
 		<servlet-name>resrc</servlet-name>
 		<servlet-class>controller.Resrc</servlet-class>
 	</servlet>
+
+
+	<!--  *.cls로 들어오는 모든 요청 서블릿 -->
+	<servlet>
+		<servlet-name>clsDispatch</servlet-name>
+		<servlet-class>dispatch.ClsDispatch</servlet-class>
+	</servlet>
+
 	
-	<!-- 정의된 서블릿 매핑 -->
+	<!-- ****************정의된 서블릿 매핑**************** -->
+	<!-- css, js, img 서블릿 매핑 -->
 	<servlet-mapping>
 		<servlet-name>resrc</servlet-name>
 		<url-pattern>/css/*</url-pattern>
 		<url-pattern>/js/*</url-pattern>
 		<url-pattern>/img/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!--  *.cls로 요청하는 서블릿 매핑 -->
+	<servlet-mapping>
+		<servlet-name>clsDispatch</servlet-name>
+		<url-pattern>*.cls</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

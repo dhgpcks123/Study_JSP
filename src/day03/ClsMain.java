@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet("/main.cls")
+@WebServlet("/day03/main.cls")
 public class ClsMain extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) {
 		// 할 일
