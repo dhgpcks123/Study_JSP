@@ -17,7 +17,7 @@ public class LoginProc extends HttpServlet {
 		MemberDAO mDAO = new MemberDAO();
 		int cnt = mDAO.getLoginCnt(sid, spw);
 		// 3. 결과에 따라 뷰 정하고
-		String view = "/jspcls/main.cls";
+		String view = "/jspcls/pre/main.cls";
 		if(cnt != 1) {
 			// 이 경우는 로그인에 실패한 경우 -> 로그인 페이지로 다시 이동시킨다.
 			view = "/jspcls/day03/login.cls";

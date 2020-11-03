@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('#btn1').click(function(){
-		$(location).attr('href', '/jspcls/main.cls');
+		$(location).attr('href', '/jspcls/main.cls')
 	});
 	$('#btn2').click(function(){
 		// 할 일

@@ -1,8 +1,8 @@
-package controller;
+package com.increpas.cls.controller;
 
 import javax.servlet.http.*;
 
-import controller.ClsMain;
+import com.increpas.cls.controller.member.*;
 
 public class MainController implements ClsMain {
 

@@ -21,7 +21,7 @@
 	<!--  *.cls로 들어오는 모든 요청 서블릿 -->
 	<servlet>
 		<servlet-name>clsDispatch</servlet-name>
-		<servlet-class>dispatch.ClsDispatch</servlet-class>
+		<servlet-class>com.increpas.cls.dispatch.ClsDispatch</servlet-class>
 	</servlet>
 
 	

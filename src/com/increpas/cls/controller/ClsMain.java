@@ -1,4 +1,4 @@
-package controller;
+package com.increpas.cls.controller;
 
 import javax.servlet.http.*;
 

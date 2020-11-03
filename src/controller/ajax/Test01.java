@@ -2,6 +2,8 @@ package controller.ajax;
 
 import javax.servlet.http.*;
 
+import controller.ClsMain;
+
 import controller.*;
 
 public class Test01 implements ClsMain {
